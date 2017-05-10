@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template, jsonify
 from lib.codes import codes
 
 app = Flask(__name__)
@@ -6,7 +6,12 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return translate("ne")
+    return render_template('index.html')
+
+
+@app.route("/api/flags")
+def get_flags():
+    return jsonify(codes)
 
 
 @app.route("/<phrase>")

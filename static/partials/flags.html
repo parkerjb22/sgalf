@@ -1,0 +1,13 @@
+<div class="content-wrapper">
+    <div>
+        <input ng-keyup="vm.translate()" ng-model="vm.inputText">
+        <input type="text" value="{{vm.flagText}}">
+        <button ng-click="vm.copy()" style="width:auto;display:inline-block">Copy</button>
+    </div>
+    <table>
+        <tr ng-repeat="row in vm.flags">
+            <td ng-repeat-start="flag in row" style="padding:0 1px 0 1px;">{{ flag[0] }}</td>
+            <td ng-repeat-end style="padding:0 15px 0 0px;">{{ flag[1] }}</td>
+        </tr>
+    </table>
+</div>
